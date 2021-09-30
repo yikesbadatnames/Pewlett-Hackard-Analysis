@@ -136,3 +136,11 @@ FROM dept_manager AS dm
         ON (dm.dept_no = d.dept_no)
     INNER JOIN current_emp AS ce
         ON (dm.emp_no = ce.emp_no);
+
+-- skills challenge 1
+select ri.emp_no, ri.first_name, ri.last_name, de.dept_no, d.dept_name
+from retirement_info as ri
+left join dept_emp as de
+	on (ri.emp_no = de.emp_no)
+left join departments as d 
+	on (de.dept_no = d.dept_no);
