@@ -40,12 +40,11 @@ CREATE TABLE salaries (
 -- creating tabel for managers
 CREATE TABLE titles (
 	emp_no INT NOT NULL,
-	title VARCHAR(16) NOT NULL,
+	title VARCHAR(18) NOT NULL,
 	from_date DATE NOT NULL,
 	to_date DATE NOT NULL,
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
 );
-
 -- creating table department_emp
 CREATE TABLE dept_emp (
 	emp_no INT NOT NULL,
