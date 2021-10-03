@@ -63,3 +63,10 @@ select count(m.title) as count, m.title
 from mentorship_eligibility as m
 group by m.title
 order by count desc;
+
+--mentorship to retiring ratio
+select (cast(gm.count as decimal) / rt.count) as count, rt.title
+into mentor_retiring_ratio
+from group_mentor as gm
+left join retiring_titles as rt
+on (rt.title = gm.title);
